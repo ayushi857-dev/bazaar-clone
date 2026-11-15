@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101d2c">
+  <meta name="description" content="Discover everyday deals across tech, style, books and home at Bazaar India.">
+  <title>Bazaar India | Everyday finds, delivered</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand header-brand" href="#top" aria-label="bazaar.in home"><span class="brand-name">bazaar.in</span></a>
+      <button class="location header-action" id="open-location" type="button" aria-label="Delivery location: Patna 800020"><svg class="pin-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg><span><small id="location-label">Delivering to Patna 800020</small><strong>Update location</strong></span></button>
+      <form class="search-form" id="search-form" role="search">
+        <label class="sr-only" for="search-input">Search products</label>
+        <select id="search-category" aria-label="Search category"><option value="all">All</option><option value="electronics">Electronics</option><option value="phones">Phones</option><option value="laptops">Computers</option><option value="audio">Audio</option><option value="shoes">Footwear</option><option value="watches">Watches</option><option value="clothing">Fashion</option><option value="bags">Bags &amp; Luggage</option><option value="books">Books</option><option value="home">Home</option></select>
+        <input id="search-input" type="search" placeholder="Search Bazaar.in" autocomplete="off">
+        <button class="search-button" aria-label="Search" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg></button>
+      </form>
+      <button class="language header-action" type="button" data-panel="language" aria-label="Language: India"><span class="flag">🇮🇳</span><strong class="language-label">IN</strong><span class="chevron">⌄</span></button>
+      <button class="account header-action" type="button" data-panel="account"><small>Hello, sign in</small><strong>Account &amp; Lists <span class="chevron">⌄</span></strong></button>
+      <a class="orders header-action" href="#orders"><small>Returns</small><strong>&amp; Orders</strong></a>
+      <button class="cart-trigger header-action" id="open-cart" type="button" aria-label="Open shopping cart"><span class="cart-icon" aria-hidden="true"><svg viewBox="0 0 28 28"><path d="M3 5h3l2.4 13.1a2 2 0 0 0 2 1.6h10.8a2 2 0 0 0 1.9-1.4L26 9H7"></path><circle cx="11" cy="24" r="1.5"></circle><circle cx="21" cy="24" r="1.5"></circle></svg><span id="cart-count">0</span></span><strong>Cart</strong></button>
+      <button class="mobile-menu" id="mobile-menu" aria-label="More account options" aria-expanded="false" aria-controls="mobile-utility" type="button"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-utility" id="mobile-utility">
+      <button class="mobile-utility-link" type="button" data-panel="language">🇮🇳 <span class="language-label">IN</span></button>
+      <button class="mobile-utility-link" type="button" data-panel="account">Hello, sign in · Account &amp; Lists</button>
+      <a class="mobile-utility-link" href="#orders">Returns &amp; Orders</a>
+    </div>
+    <nav class="nav-bar" id="nav-bar" aria-label="Main navigation">
+      <button class="nav-link nav-menu" data-filter="all" type="button">☰ All</button>
+      <button class="nav-link" type="button" data-panel="minitv">Bazaar miniTV</button>
+      <button class="nav-link" type="button" data-panel="sell">Sell</button>
+      <button class="nav-link" data-filter="all" data-sort="rating" type="button">Best Sellers</button>
+      <button class="nav-link" data-filter="phones" type="button">Mobiles</button>
+      <button class="nav-link" data-filter="all" type="button">Today’s Deals</button>
+      <button class="nav-link" data-filter="all" type="button">New Releases</button>
+      <a class="nav-link" href="#orders">Customer Service</a>
+      <button class="nav-link" type="button" data-panel="prime">Prime <span class="chevron">⌄</span></button>
+      <button class="nav-link" data-filter="electronics" type="button">Electronics</button>
+      <button class="nav-link" data-filter="books" type="button">Gift Ideas</button>
+      <button class="nav-link" data-filter="clothing" type="button">Fashion</button>
+    </nav>
+    <nav class="fashion-bar" id="fashion-nav" aria-label="Fashion categories">
+      <button class="fashion-link fashion-title" data-filter="clothing" type="button">Bazaar Fashion</button>
+      <button class="fashion-link" data-filter="clothing" type="button">Women</button>
+      <button class="fashion-link" data-filter="clothing" type="button">Men</button>
+      <button class="fashion-link" data-filter="clothing" type="button">Kids</button>
+      <button class="fashion-link" data-filter="bags" type="button">Bags &amp; Luggage</button>
+      <button class="fashion-link" data-filter="shoes" type="button">Sportswear</button>
+      <button class="fashion-link" data-filter="all" type="button">Sales &amp; Deals</button>
+      <span class="fashion-promo"><strong>30 DAY RETURNS</strong><small>Restrictions Apply</small></span>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Featured products">
+      <img class="hero-image" src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=2000&q=85" alt="Bright, welcoming modern home kitchen" onerror="this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=2000&q=85'">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <h1>Shop Bazaar.in.</h1>
+        <p class="hero-copy">Explore tech, fashion, home, books and more.</p>
+        <a class="hero-cta" href="#deals">Shop Deals <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="service-strip" aria-label="Shopping benefits">
+      <div><span class="service-icon">↗</span><span><strong>Fast delivery</strong></span></div>
+      <div><span class="service-icon">↺</span><span><strong>Easy returns</strong></span></div>
+      <div><span class="service-icon">₹</span><span><strong>Secure payments</strong></span></div>
+    </section>
+
+    <section class="category-section" aria-labelledby="category-title">
+      <div class="section-heading">
+        <div><h2 id="category-title">Shop by category</h2></div>
+        <button class="text-link" id="see-all-categories" type="button">Browse everything <span aria-hidden="true">→</span></button>
+      </div>
+      <div class="category-grid" id="category-grid">
+        <button class="category-tile" data-category="phones" type="button"><span class="category-photo"><img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&amp;fit=crop&amp;w=500&amp;q=80" alt="Smartphone" onerror="this.src='https://images.unsplash.com/photo-1511702977365-0b5c4d9d9f2d?auto=format&amp;fit=crop&amp;w=500&amp;q=80'"></span><span class="category-label">Phones</span><span class="tile-arrow">↗</span></button>
+        <button class="category-tile" data-category="laptops" type="button"><span class="category-photo"><img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&amp;fit=crop&amp;w=500&amp;q=80" alt="Laptop on a desk" onerror="this.src='https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&amp;fit=crop&amp;w=500&amp;q=80'"></span><span class="category-label">Computers</span><span class="tile-arrow">↗</span></button>
+        <button class="category-tile" data-category="audio" type="button"><span class="category-photo"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&amp;fit=crop&amp;w=500&amp;q=80" alt="Over-ear headphones" onerror="this.src='https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&amp;fit=crop&amp;w=500&amp;q=80'"></span><span class="category-label">Audio</span><span class="tile-arrow">↗</span></button>
+        <button class="category-tile" data-category="shoes" type="button"><span class="category-photo"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=500&amp;q=80" alt="Red athletic shoe" onerror="this.src='https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&amp;fit=crop&amp;w=500&amp;q=80'"></span><span class="category-label">Footwear</span><span class="tile-arrow">↗</span></button>
+        <button class="category-tile" data-category="watches" type="button"><span class="category-photo"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&amp;fit=crop&amp;w=500&amp;q=80" alt="Classic wristwatch" onerror="this.src='https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&amp;fit=crop&amp;w=500&amp;q=80'"></span><span class="category-label">Watches</span><span class="tile-arrow">↗</span></button>
+        <button class="category-tile" data-category="home" type="button"><span class="category-photo"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&amp;fit=crop&amp;w=500&amp;q=80" alt="Comfortable living room sofa" onerror="this.src='https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&amp;fit=crop&amp;w=500&amp;q=80'"></span><span class="category-label">Home</span><span class="tile-arrow">↗</span></button>
+      </div>
+    </section>
+
+    <section class="deals-section" id="deals" aria-labelledby="deals-title">
+      <div class="section-heading deals-heading">
+        <div><h2 id="deals-title">Shop all products</h2></div>
+        <div class="deal-controls"><span class="result-count" id="result-count"></span><button class="filter-reset" id="clear-filter" type="button">Clear filters <span aria-hidden="true">×</span></button></div>
+      </div>
+      <div class="filter-row" id="filter-row" role="group" aria-label="Filter products by category">
+        <button class="filter-chip active" data-filter="all" type="button">All products</button>
+        <button class="filter-chip" data-filter="phones" type="button">Phones</button>
+        <button class="filter-chip" data-filter="laptops" type="button">Computers</button>
+        <button class="filter-chip" data-filter="audio" type="button">Audio</button>
+        <button class="filter-chip" data-filter="shoes" type="button">Footwear</button>
+        <button class="filter-chip" data-filter="watches" type="button">Watches</button>
+        <button class="filter-chip" data-filter="clothing" type="button">Clothing</button>
+        <button class="filter-chip" data-filter="books" type="button">Books</button>
+        <button class="filter-chip" data-filter="home" type="button">Home</button>
+      </div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">⌕</span><h3>No products found</h3><p>Try a different search or category.</p><button id="empty-reset" type="button">Show all products</button></div>
+    </section>
+
+    <section class="newsletter" aria-label="Newsletter signup">
+      <div class="newsletter-copy"><h2>Get email updates</h2></div>
+      <form class="newsletter-form" id="newsletter-form"><label class="sr-only" for="newsletter-email">Email address</label><input id="newsletter-email" type="email" placeholder="Your email address" required><button type="submit">Sign me up <span aria-hidden="true">→</span></button></form>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="orders">
+    <div class="footer-top"><a class="brand footer-brand" href="#top"><span class="brand-mark">b</span><span class="brand-name">bazaar<span>.in</span></span><small>INDIA</small></a><a class="back-top" href="#top">Back to top <span aria-hidden="true">↑</span></a></div>
+    <div class="footer-links"><div><h3>Get to know us</h3><a href="#top">About Bazaar</a><a href="#top">Careers</a><a href="#top">Our stores</a></div><div><h3>Shop with us</h3><a href="#deals">Today’s deals</a><a href="#category-title">Browse categories</a><a href="#deals">Gift cards</a></div><div><h3>Let us help you</h3><a href="#orders">Your account</a><a href="#orders">Your orders</a><a href="#orders">Returns &amp; refunds</a></div><div class="footer-country"><span class="flag">🇮🇳</span> India <span class="footer-languages">English</span></div></div>
+    <div class="footer-bottom"><span>© 2026 Bazaar India · Independent learning project.</span><div><a href="#top">Privacy</a><a href="#top">Terms</a><a href="#top">Cookies</a></div></div>
+  </footer>
+
+  <div class="cart-backdrop" id="cart-backdrop" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart" aria-modal="true" role="dialog" aria-hidden="true">
+    <div class="cart-head"><div><p class="section-kicker">YOUR BAG</p><h2>Your cart <span id="drawer-count">(0)</span></h2></div><button class="close-cart" id="close-cart" type="button" aria-label="Close cart">×</button></div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-empty" id="cart-empty"><span aria-hidden="true">⌑</span><h3>Your cart is empty</h3><button id="continue-shopping" type="button">Continue shopping</button></div>
+    <div class="cart-summary" id="cart-summary" hidden><div><span>Subtotal</span><strong id="cart-subtotal">₹0</strong></div><p>Taxes included. Delivery calculated at checkout.</p><button class="checkout-button" id="checkout-button" type="button">Continue to checkout <span aria-hidden="true">→</span></button><span class="secure-note">⌑ Secure checkout</span></div>
+  </aside>
+  <dialog class="header-dialog" id="location-dialog" aria-labelledby="location-title">
+    <form id="location-form" method="dialog">
+      <button class="dialog-close" id="close-location" type="button" aria-label="Close location dialog">×</button>
+      <p class="dialog-kicker">DELIVERY LOCATION</p>
+      <h2 id="location-title">Choose your location</h2>
+      <label for="pin-code">Enter a 6-digit PIN code</label>
+      <input id="pin-code" name="pin" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{6}" maxlength="6" required value="800020">
+      <button class="dialog-submit" type="submit">Apply location</button>
+    </form>
+  </dialog>
+  <dialog class="header-dialog" id="info-dialog" aria-labelledby="info-title">
+    <div>
+      <button class="dialog-close" id="close-info" type="button" aria-label="Close panel">×</button>
+      <p class="dialog-kicker">BAZAAR.IN</p>
+      <h2 id="info-title"></h2>
+      <p class="dialog-message" id="info-message"></p>
+      <div class="dialog-actions" id="info-actions"></div>
+    </div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
